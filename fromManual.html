@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <title>Testim ROI Calculator</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+          * {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display:flex;
+    margin-left:-5px;
+    margin-right:-5px;
+  }
+  
+  .column {
+    flex: 40%;
+    padding: 8px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 5px;
+  }
+
+  .container {
+            display: flex; 
+        }
+        .div1, .div2 {
+            width: 50%; /* Each div takes up 50% of the container width */
+            padding: 20px;
+            border: 1px solid #CFDBFB;
+            border-radius: 15px;
+        }
+
+        .container>div:first-child{ 
+	margin-right:20px;  
+} 
+
+        .circle {
+        width: 100px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 16px;
+        border: 3px solid #000;
+      }
+
+      .submitBtn{
+        background: #016ABC;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none; padding-left: 25px; padding-right: 25px; padding-top: 10px; padding-bottom: 10px; font-size:medium;
+}
+
+    .submitBtn:hover{
+        background-color: #A7C7E7;
+        color: #000;
+        cursor:pointer;
+}
+    </style>
+  </head>
+  <body style="padding-left: 30px; padding-right: 30px; font-family: 'Roboto';">
+    <div style="padding-bottom: 10px;">
+        <a href="./index.html"><img src="./img/roi-calc-logo.png" width="300px"></a>
+    </div>
+
+    <h5 style="font-family: system-ui, sans-serif; text-align: center;color: #0066A2; font-style: italic;">(*) All the fields in the first section are editable</h5>
+
+    <form action="" method="post" id="myForm" name="myForm">
+        <div class="container">
+            <div class="div1">
+            <table>
+            <tr>
+                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Inputs / Desired State</th>
+                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Smoke</th>
+                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;"></th>
+                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Regression</th>
+            </tr>
+            <tr>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;">Number of Applications</td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfAppsSmoke" name="z_NumOfAppsSmoke" style="border: none; text-align: center;" size="8" value="1" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfAppsReg" name="z_NumOfAppsReg" style="border: none; text-align: center; " size="8" value="1" required></td>
+            </tr>
+            <tr style="background-color: #ebf5fb;">
+                <td style="font-size: small;">Number of Test Cases</td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfTestsSmoke" name="z_NumOfTestsSmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="20" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfTestsReg" name="z_NumOfTestsReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="200" required></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;">Number of Browsers&nbsp;&nbsp;<img src="./img/chrome.svg" width="15">&nbsp;<img src="./img/firefox.svg" width="15">&nbsp;<img src="./img/safari.svg" width="15">&nbsp;<img src="./img/edge.svg" width="15"></td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfBrowsersSmoke" name="z_NumOfBrowsersSmoke" style="border: none; text-align: center;" size="8" value="1" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfBrowsersReg" name="z_NumOfBrowsersReg" style="border: none; text-align: center;" size="8" value="3" required></td>
+            </tr>
+            <tr style="background-color: #ebf5fb;">
+                <td style="font-size: small;">Execution Frequency</td>
+                <td style="font-size: small;"><input type="text" id="z_FrequencySmoke" name="z_FrequencySmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="Daily" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_FrequencyReg" name="z_FrequencyReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="Weekly" required></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;">Test Execution Time</td>
+                <td style="font-size: small;"><input type="text" id="z_TestExecTimeSmoke" name="z_TestExecTimeSmoke" style="border: none; text-align: center;" size="8" value="3 min" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_TestExecTimeReg" name="z_TestExecTimeReg" style="border: none; text-align: center;" size="8" value="3 min" required></td>
+            </tr>
+            <tr style="background-color: #ebf5fb;">
+                <td style="font-size: small;">Time to Complete</td>
+                <td style="font-size: small;"><input type="text" id="z_TimeToCompleteSmoke" name="z_TimeToCompleteSmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="1 hour" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_TimeToCompleteReg" name="z_TimeToCompleteReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="7 hours" required></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+            </tr>
+            <tr>
+                <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps;">Number of Concurrencies</td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfParallelsSmoke" name="z_NumOfParallelsSmoke" style="border: none; text-align: center;font-weight: bold;" size="8" value="1" required></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"><input type="text" id="z_NumOfParallelsReg" name="z_NumOfParallelsReg" style="border: none; text-align: center;font-weight: bold;" size="8" value="3" required></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+                <td style="font-size: small;"></td>
+            </tr>
+            <tr>
+                <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; text-decoration:overline;">Total Number of Concurrencies</td>
+                <td></td>
+                <td style="font-size: small;"><input class="circle" type="text" id="z_TotalNumOfParallels" name="z_TotalNumOfParallels" style="border: none; text-align: center; background-color: #ebf5fb;font-weight: bold;" size="8" value="4" required></td>
+                <td></td>
+            </tr>
+            </table>
+            </div>
+
+            <div class="div2">
+            <table>
+                <tr>
+                    <td><label for="z_TimeToCompleteManualTest">Average Time to Complete 1 Manual Test (min)</label></td>
+                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_TimeToCompleteManualTest" name="z_TimeToCompleteManualTest" value="5" required></td>
+                </tr>
+                <tr>
+                    <td><label for="z_ManualRegPerDay">Manual Regression Runs per Day</label></td>
+                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_ManualRegPerDay" name="z_ManualRegPerDay" value="1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="z_ManualSmokePerDay">Manual Smoke Runs per Day</label></td>
+                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_ManualSmokePerDay" name="z_ManualSmokePerDay" value="1" required></td>
+                </tr>
+                <tr>
+                    <td><label for="z_AnnualSalaryManualQA">Annual Salary for Manual QA in USD (incl. bonuses and benefits)</label></td>
+                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_AnnualSalaryManualQA" name="z_AnnualSalaryManualQA" value="40000" required></td>
+                </tr>
+                <tr>
+                    <td><label for="z_TestimLicense">Testim License</label></td>
+                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_TestimLicense" name="z_TestimLicense" value="20000" required></td>
+                </tr>
+
+                <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+                <tr><td><input type="submit" class="submitBtn" value="Calculate"></td></tr>
+            </table>
+            </div>
+            
+        <div>
+    </form>
+
+
+    <br><br>
+    <hr style="height:2px;border-width:0;color:#A7C7E7;background-color:#A7C7E7;">
+    <h2 style="font-family: system-ui, sans-serif; text-align: center;color: #0066A2;">ROI in <input type="text" id="ROIinMonths" style="border: none; text-align: center;font-size:x-large;color: #28b463;font-weight: bold;" size="4" readonly> Months</h2>
+    <hr style="height:2px;border-width:0;color:#A7C7E7;background-color:#A7C7E7;">
+    <br><br>
+
+    <div class="container">
+        <div class="div1">
+    <table>
+        <tr>
+            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Cost Item</th>
+            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Manual Testing</th>
+            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Testim Automation</th>
+            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Savings / year</th>
+        </tr>
+        <tr>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of Regression Test Cases</td>
+            <td style="font-size: small;"><input type="text" id="zz_NumOfTestsReg" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of Smoke Test Cases</td>
+            <td style="font-size: small;"><input type="text" id="zz_NumOfTestsSmoke" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Average Time to Complete 1 Manual Test (min)</td>
+            <td style="font-size: small;"><input type="text" id="zz_TimeToCompleteManualTest" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Manual Regression Runs per Day</td>
+            <td style="font-size: small;"><input type="text" id="zz_ManualRegPerDay" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Manual Smoke Runs per Day</td>
+            <td style="font-size: small;"><input type="text" id="zz_ManualSmokePerDay" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of Browsers for Manual Regression</td>
+            <td style="font-size: small;"><input type="text" id="zz_NumOfBrowsersReg" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of Browsers for Manual Smoke</td>
+            <td style="font-size: small;"><input type="text" id="zz_NumOfBrowsersSmoke" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;"><hr style="height:2px;border-width:0;color:#A7C7E7;background-color:#E2DFD2;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of People Required to Complete Regression</td>
+            <td style="font-size: small;"><input type="text" id="z_NumOfPeopleToCompleteManualReg" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Number of People Required to Complete Smoke</td>
+            <td style="font-size: small;"><input type="text" id="z_NumOfPeopleToCompleteManualSmoke" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Total Number of People Required</td>
+            <td style="font-size: small;"><input type="text" id="z_TotalNumOfPeopleRequired" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Annual Salary for Manual QA (USD)</td>
+            <td style="font-size: small;"><input type="text" id="zz_AnnualSalaryManualQA" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;">Testim License</td>
+            <td style="font-size: small;"><input type="text" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"><input type="text" id="zz_TestimLicense" style="border: none; text-align: center;" size="8" readonly></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; background-color: #FAF9F6;">Total Annual Cost (USD)</td>
+            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" id="z_TotalAnnualManualCost" style="border: none; text-align: center;background-color: #FAF9F6;font-weight: bold;" size="8" readonly></td>
+            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" id="z_TotalAnnualTestimCost" style="border: none; text-align: center;background-color: #FAF9F6;font-weight: bold;" size="8" readonly></td>
+            <td style="font-size: small;background-color: #FAF9F6;"></td>
+        </tr>
+        <tr>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+            <td style="font-size: small;"></td>
+        </tr>
+        <tr>
+            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; text-decoration:overline;">Total Savings Per Year (USD)</td>
+            <td></td>
+            <td></td>
+            <td style="font-size: small;"><input class="circle" type="text" id="totalSavingsPerYear" style="border: none; text-align: center; color: #0066A2; background-color: #2AAA8A80;font-weight: bold;" size="8" readonly></td>
+        </tr>
+    </table>
+    </div>
+
+
+    <div class="div2">
+    <div style="width: 750px;"><canvas id="kpis"></canvas></div>
+</div>
+</div>
+
+    <!--<button class="btnRefresh" id="btnRefresh">Manual3</button>-->
+
+    <script type="module" src="./kpis.js"></script>
+
+  </body>
+</html>
