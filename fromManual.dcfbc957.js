@@ -677,52 +677,44 @@ const myChart = new (0, _autoDefault.default)(ctx, {
         }
     }
 });
-/*document.getElementById('btnRefresh').addEventListener('click', function() {
-    myChart.data.datasets[0].data[0] = 50;
-    myChart.update();
-  });*/ let form = document.forms["myForm"];
+let form = document.forms["myForm"];
 form.addEventListener("submit", getValues);
 function getValues(event) {
     event.preventDefault();
-    //alert(this.numOfManualTesters.value + " | " + this.timeForE2ETest.value + " | " + this.salaryManualTester.value + " | " + this.numOfE2ETests.value + " | " + this.numOfOS.value + " | " + this.numOfBrowsers.value + " | " + this.numOfEnvs.value + " | " + this.frequencyPerMonth.value);
-    document.getElementById("totalNumOfManualRunsWeb").value = this.numOfE2ETests.value * this.numOfOS.value * this.numOfBrowsers.value * this.numOfEnvs.value * this.frequencyPerMonth.value;
-    let year2 = parseInt(this.numOfE2ETests.value) + parseInt(50);
-    let year3 = parseInt(this.numOfE2ETests.value) + parseInt(100);
-    let totalNumOfManualRunsWebYear2 = year2 * this.numOfOS.value * this.numOfBrowsers.value * this.numOfEnvs.value * this.frequencyPerMonth.value;
-    let totalNumOfManualRunsWebYear3 = year3 * this.numOfOS.value * this.numOfBrowsers.value * this.numOfEnvs.value * this.frequencyPerMonth.value;
-    document.getElementById("totalNumOfManualRunsMobile").value = this.numOfE2ETestsMobile.value * this.numOfApp.value * this.numOfDevices.value * this.frequencyPerMonthMobile.value;
-    document.getElementById("totalNumOfManualRuns").value = parseInt(document.getElementById("totalNumOfManualRunsWeb").value) + parseInt(document.getElementById("totalNumOfManualRunsMobile").value);
-    let totalNumOfManualRunsYear2 = totalNumOfManualRunsWebYear2 + parseInt(document.getElementById("totalNumOfManualRunsMobile").value);
-    let totalNumOfManualRunsYear3 = totalNumOfManualRunsWebYear3 + parseInt(document.getElementById("totalNumOfManualRunsMobile").value);
-    document.getElementById("t_timeForE2ETest").value = this.timeForE2ETest.value;
-    document.getElementById("totalNumOfManualRunsPerYear").value = document.getElementById("totalNumOfManualRuns").value * 12;
-    let totalNumOfManualRunsPerYear2 = totalNumOfManualRunsYear2 * 12;
-    let totalNumOfManualRunsPerYear3 = totalNumOfManualRunsYear3 * 12;
-    document.getElementById("numOfE2ETestsWebAndMobile").value = parseInt(this.numOfE2ETests.value) + parseInt(this.numOfE2ETestsMobile.value);
-    document.getElementById("t_salaryManualTester").value = this.salaryManualTester.value;
-    document.getElementById("t_salaryManualTester2").value = this.salaryManualTester.value;
-    document.getElementById("totalAnnualCostManual").value = parseFloat(this.timeForE2ETest.value * document.getElementById("totalNumOfManualRunsPerYear").value * this.salaryManualTester.value).toLocaleString();
-    document.getElementById("totalAnnualCostTestim").value = parseFloat(1 * document.getElementById("numOfE2ETestsWebAndMobile").value * this.salaryManualTester.value).toLocaleString();
-    let savingsPerYearManual = parseInt(this.timeForE2ETest.value * document.getElementById("totalNumOfManualRunsPerYear").value * this.salaryManualTester.value) - parseInt(1 * document.getElementById("numOfE2ETestsWebAndMobile").value * this.salaryManualTester.value);
-    document.getElementById("savingsPerYearManual").value = "$" + savingsPerYearManual.toLocaleString();
-    document.getElementById("t_MaintenanceTestim").value = parseInt(8.8 * 12);
-    document.getElementById("t_salaryManualTester3").value = this.salaryManualTester.value;
-    document.getElementById("t_salaryManualTester4").value = this.salaryManualTester.value;
-    document.getElementById("t_numberOfManualTesters").value = this.numOfManualTesters.value;
-    document.getElementById("t_numberOfManualTesters2").value = this.numOfManualTesters.value;
-    document.getElementById("annualMaintenanceTestim").value = parseFloat(document.getElementById("t_MaintenanceTestim").value * this.salaryManualTester.value * this.numOfManualTesters.value).toLocaleString();
-    let savingsPerYearMaint = parseInt(0 - parseInt(document.getElementById("t_MaintenanceTestim").value * this.salaryManualTester.value * this.numOfManualTesters.value));
-    document.getElementById("savingsPerYearMaint").value = "$" + savingsPerYearMaint.toLocaleString();
-    document.getElementById("totalSavingsPerYear").value = "$" + (savingsPerYearManual + savingsPerYearMaint).toLocaleString();
-    myChart.data.datasets[0].data[0] = parseFloat(this.timeForE2ETest.value * document.getElementById("totalNumOfManualRunsPerYear").value * this.salaryManualTester.value);
-    myChart.data.datasets[1].data[0] = parseFloat(1 * document.getElementById("numOfE2ETestsWebAndMobile").value * this.salaryManualTester.value) + parseFloat(document.getElementById("t_MaintenanceTestim").value * this.salaryManualTester.value * this.numOfManualTesters.value);
-    myChart.data.datasets[0].data[1] = parseFloat(this.timeForE2ETest.value * totalNumOfManualRunsPerYear2 * this.salaryManualTester.value);
-    myChart.data.datasets[1].data[1] = parseFloat(1 * (parseInt(document.getElementById("numOfE2ETestsWebAndMobile").value) + parseInt(50)) * this.salaryManualTester.value) + parseFloat(document.getElementById("t_MaintenanceTestim").value * this.salaryManualTester.value * this.numOfManualTesters.value);
-    myChart.data.datasets[0].data[2] = parseFloat(this.timeForE2ETest.value * totalNumOfManualRunsPerYear3 * this.salaryManualTester.value);
-    myChart.data.datasets[1].data[2] = parseFloat(1 * (parseInt(document.getElementById("numOfE2ETestsWebAndMobile").value) + parseInt(100)) * this.salaryManualTester.value) + parseFloat(document.getElementById("t_MaintenanceTestim").value * this.salaryManualTester.value * this.numOfManualTesters.value);
+    document.getElementById("zz_NumOfTestsReg").value = this.z_NumOfTestsReg.value;
+    document.getElementById("zz_NumOfTestsSmoke").value = this.z_NumOfTestsSmoke.value;
+    document.getElementById("zz_TimeToCompleteManualTest").value = this.z_TimeToCompleteManualTest.value;
+    document.getElementById("zz_ManualRegPerDay").value = this.z_ManualRegPerDay.value;
+    document.getElementById("zz_ManualSmokePerDay").value = this.z_ManualSmokePerDay.value;
+    document.getElementById("zz_NumOfBrowsersReg").value = this.z_NumOfBrowsersReg.value;
+    document.getElementById("zz_NumOfBrowsersSmoke").value = this.z_NumOfBrowsersSmoke.value;
+    document.getElementById("zz_AnnualSalaryManualQA").value = parseFloat(this.z_AnnualSalaryManualQA.value).toLocaleString();
+    document.getElementById("zz_TestimLicense").value = parseFloat(this.z_TestimLicense.value).toLocaleString();
+    document.getElementById("z_TotalAnnualTestimCost").value = parseFloat(this.z_TestimLicense.value).toLocaleString();
+    //calculated items
+    document.getElementById("z_NumOfPeopleToCompleteManualReg").value = (1 * this.z_NumOfTestsReg.value * this.z_TimeToCompleteManualTest.value * this.z_ManualRegPerDay.value * this.z_NumOfBrowsersReg.value / 480).toLocaleString(); //min in 8hr working day
+    document.getElementById("z_NumOfPeopleToCompleteManualSmoke").value = (1 * this.z_NumOfTestsSmoke.value * this.z_TimeToCompleteManualTest.value * this.z_ManualSmokePerDay.value * this.z_NumOfBrowsersSmoke.value / 480).toLocaleString(); //min in 8hr working day
+    document.getElementById("z_TotalNumOfPeopleRequired").value = (parseFloat(document.getElementById("z_NumOfPeopleToCompleteManualReg").value) + parseFloat(document.getElementById("z_NumOfPeopleToCompleteManualSmoke").value)).toLocaleString();
+    document.getElementById("z_TotalAnnualManualCost").value = parseFloat(document.getElementById("z_TotalNumOfPeopleRequired").value * this.z_AnnualSalaryManualQA.value).toLocaleString();
+    let _TOTAL_SAVINGS = parseFloat(document.getElementById("z_TotalNumOfPeopleRequired").value * this.z_AnnualSalaryManualQA.value) - parseFloat(this.z_TestimLicense.value);
+    document.getElementById("totalSavingsPerYear").value = _TOTAL_SAVINGS.toLocaleString();
+    let _MONTHLY_MANUAL_COST = parseFloat(document.getElementById("z_TotalAnnualManualCost").value) / 12;
+    document.getElementById("ROIinMonths").value = (parseFloat(document.getElementById("zz_TestimLicense").value) / _MONTHLY_MANUAL_COST).toLocaleString();
+    let year2 = parseInt(this.z_NumOfTestsReg.value) + parseInt(50);
+    let year3 = parseInt(this.z_NumOfTestsReg.value) + parseInt(100);
+    let _NUM_OF_PEOPLE_REQUIRED_REG_Y2 = parseFloat(1 * year2 * this.z_TimeToCompleteManualTest.value * this.z_ManualRegPerDay.value * this.z_NumOfBrowsersReg.value / 480);
+    let _TOT_NUM_OF_PEOPLE_REQUIRED_Y2 = _NUM_OF_PEOPLE_REQUIRED_REG_Y2 + parseFloat(document.getElementById("z_NumOfPeopleToCompleteManualSmoke").value);
+    let _NUM_OF_PEOPLE_REQUIRED_REG_Y3 = parseFloat(1 * year3 * this.z_TimeToCompleteManualTest.value * this.z_ManualRegPerDay.value * this.z_NumOfBrowsersReg.value / 480);
+    let _TOT_NUM_OF_PEOPLE_REQUIRED_Y3 = _NUM_OF_PEOPLE_REQUIRED_REG_Y3 + parseFloat(document.getElementById("z_NumOfPeopleToCompleteManualSmoke").value);
+    myChart.data.datasets[0].data[0] = parseFloat(1 * document.getElementById("z_TotalNumOfPeopleRequired").value * this.z_AnnualSalaryManualQA.value);
+    myChart.data.datasets[1].data[0] = this.z_TestimLicense.value;
+    myChart.data.datasets[0].data[1] = parseFloat(1 * _TOT_NUM_OF_PEOPLE_REQUIRED_Y2 * this.z_AnnualSalaryManualQA.value);
+    myChart.data.datasets[1].data[1] = this.z_TestimLicense.value;
+    myChart.data.datasets[0].data[2] = parseFloat(1 * _TOT_NUM_OF_PEOPLE_REQUIRED_Y3 * this.z_AnnualSalaryManualQA.value);
+    myChart.data.datasets[1].data[2] = this.z_TestimLicense.value;
     myChart.update();
 }
-window.addEventListener("load", getValues); //})();
+window.addEventListener("load", getValues);
 
 },{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["6hAS1","3I55N"], "3I55N", "parcelRequire52ed")
 
