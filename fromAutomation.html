@@ -1,80 +1,81 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <script src="/fromManual.ba1a4e69.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
     <title>Testim ROI Calculator</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto);
-
-          * {
-    box-sizing: border-box;
-  }
-  
-  .row {
-    display:flex;
-    margin-left:-5px;
-    margin-right:-5px;
-  }
-  
-  .column {
-    flex: 40%;
-    padding: 8px;
-  }
-  
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 5px;
-  }
-
-  .container {
-            display: flex; 
-        }
-        .div1, .div2 {
-            width: 50%; /* Each div takes up 50% of the container width */
-            padding: 20px;
-            border: 1px solid #CFDBFB;
-            border-radius: 15px;
-        }
-
-        .container>div:first-child{ 
-	margin-right:20px;  
-} 
-
-        .circle {
-        width: 100px;
-        line-height: 30px;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 16px;
-        border: 3px solid #000;
-      }
-
-      .submitBtn{
-        background: #016ABC;
-            color: #fff;
-            border: 1px solid #eee;
-            border-radius: 20px;
-            box-shadow: 5px 5px 5px #eee;
-            text-shadow: none; padding-left: 25px; padding-right: 25px; padding-top: 10px; padding-bottom: 10px; font-size:medium;
+    <style>@import "https://fonts.googleapis.com/css?family=Roboto";
+* {
+  box-sizing: border-box;
 }
 
-    .submitBtn:hover{
-        background-color: #A7C7E7;
-        color: #000;
-        cursor:pointer;
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+  display: flex;
 }
-    </style>
+
+.column {
+  flex: 40%;
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+}
+
+.div1, .div2 {
+  border: 1px solid #cfdbfb;
+  border-radius: 15px;
+  width: 50%;
+  padding: 20px;
+}
+
+.container > div:first-child {
+  margin-right: 20px;
+}
+
+.circle {
+  text-align: center;
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 100px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.submitBtn {
+  color: #fff;
+  text-shadow: none;
+  background: #016abc;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-size: medium;
+  box-shadow: 5px 5px 5px #eee;
+}
+
+.submitBtn:hover {
+  color: #000;
+  cursor: pointer;
+  background-color: #a7c7e7;
+}
+</style>
   </head>
-  <body style="padding-left: 30px; padding-right: 30px; font-family: 'Roboto';">
-    <div style="padding-bottom: 15px;">
-        <a href="./index.html"><img src="./img/roi-calc-logo.png" width="300px"></a>
+  <body style="padding-left: 30px; padding-right: 30px; font-family: Roboto">
+    <div style="padding-bottom: 15px">
+        <a href="/index.html"><img src="/roi-calc-logo.e0c93749.png" width="300px"></a>
     </div>
 
     <!--
@@ -157,82 +158,82 @@
     <br><br>
 
 -->
-<h5 style="font-family: system-ui, sans-serif; text-align: center;color: #0066A2; font-style: italic;">(*) All the fields in the first section are editable</h5>
+<h5 style="text-align: center; color: #0066a2; font-family: system-ui, sans-serif; font-style: italic">(*) All the fields in the first section are editable</h5>
 
     <form action="" method="post" id="myForm" name="myForm">
         <div class="container">
             <div class="div1">
             <table>
             <tr>
-                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Inputs / Desired State</th>
-                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Smoke</th>
-                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;"></th>
-                <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #0066A2; color: #fff;">Regression</th>
+                <th style="font-variant: small-caps; color: #fff; background-color: #0066a2; font-family: system-ui, sans-serif; font-size: small">Inputs / Desired State</th>
+                <th style="font-variant: small-caps; color: #fff; background-color: #0066a2; font-family: system-ui, sans-serif; font-size: small">Smoke</th>
+                <th style="font-variant: small-caps; color: #fff; background-color: #0066a2; font-family: system-ui, sans-serif; font-size: small"></th>
+                <th style="font-variant: small-caps; color: #fff; background-color: #0066a2; font-family: system-ui, sans-serif; font-size: small">Regression</th>
             </tr>
             <tr>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
             </tr>
             <tr>
-                <td style="font-size: small;">Number of Applications</td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfAppsSmoke" name="z_NumOfAppsSmoke" style="border: none; text-align: center;" size="8" value="1" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfAppsReg" name="z_NumOfAppsReg" style="border: none; text-align: center; " size="8" value="1" required></td>
+                <td style="font-size: small">Number of Applications</td>
+                <td style="font-size: small"><input type="text" id="z_NumOfAppsSmoke" name="z_NumOfAppsSmoke" style="text-align: center; border: none" size="8" value="1" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_NumOfAppsReg" name="z_NumOfAppsReg" style="text-align: center; border: none" size="8" value="1" required=""></td>
             </tr>
-            <tr style="background-color: #ebf5fb;">
-                <td style="font-size: small;">Number of Test Cases</td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfTestsSmoke" name="z_NumOfTestsSmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="20" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfTestsReg" name="z_NumOfTestsReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="200" required></td>
-            </tr>
-            <tr>
-                <td style="font-size: small;">Number of Browsers&nbsp;&nbsp;<img src="./img/chrome.svg" width="15">&nbsp;<img src="./img/firefox.svg" width="15">&nbsp;<img src="./img/safari.svg" width="15">&nbsp;<img src="./img/edge.svg" width="15"></td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfBrowsersSmoke" name="z_NumOfBrowsersSmoke" style="border: none; text-align: center;" size="8" value="1" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfBrowsersReg" name="z_NumOfBrowsersReg" style="border: none; text-align: center;" size="8" value="3" required></td>
-            </tr>
-            <tr style="background-color: #ebf5fb;">
-                <td style="font-size: small;">Execution Frequency</td>
-                <td style="font-size: small;"><input type="text" id="z_FrequencySmoke" name="z_FrequencySmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="Daily" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_FrequencyReg" name="z_FrequencyReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="Weekly" required></td>
+            <tr style="background-color: #ebf5fb">
+                <td style="font-size: small">Number of Test Cases</td>
+                <td style="font-size: small"><input type="text" id="z_NumOfTestsSmoke" name="z_NumOfTestsSmoke" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="20" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_NumOfTestsReg" name="z_NumOfTestsReg" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="200" required=""></td>
             </tr>
             <tr>
-                <td style="font-size: small;">Test Execution Time</td>
-                <td style="font-size: small;"><input type="text" id="z_TestExecTimeSmoke" name="z_TestExecTimeSmoke" style="border: none; text-align: center;" size="8" value="3 min" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_TestExecTimeReg" name="z_TestExecTimeReg" style="border: none; text-align: center;" size="8" value="3 min" required></td>
+                <td style="font-size: small">Number of Browsers&nbsp;&nbsp;<img src="/chrome.acdd5530.svg" width="15">&nbsp;<img src="/firefox.83679798.svg" width="15">&nbsp;<img src="/safari.c210479d.svg" width="15">&nbsp;<img src="/edge.93176ca2.svg" width="15"></td>
+                <td style="font-size: small"><input type="text" id="z_NumOfBrowsersSmoke" name="z_NumOfBrowsersSmoke" style="text-align: center; border: none" size="8" value="1" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_NumOfBrowsersReg" name="z_NumOfBrowsersReg" style="text-align: center; border: none" size="8" value="3" required=""></td>
             </tr>
-            <tr style="background-color: #ebf5fb;">
-                <td style="font-size: small;">Time to Complete</td>
-                <td style="font-size: small;"><input type="text" id="z_TimeToCompleteSmoke" name="z_TimeToCompleteSmoke" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="1 hour" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_TimeToCompleteReg" name="z_TimeToCompleteReg" style="border: none; text-align: center; background-color: #ebf5fb;" size="8" value="7 hours" required></td>
-            </tr>
-            <tr>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
+            <tr style="background-color: #ebf5fb">
+                <td style="font-size: small">Execution Frequency</td>
+                <td style="font-size: small"><input type="text" id="z_FrequencySmoke" name="z_FrequencySmoke" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="Daily" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_FrequencyReg" name="z_FrequencyReg" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="Weekly" required=""></td>
             </tr>
             <tr>
-                <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps;">Number of Concurrencies</td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfParallelsSmoke" name="z_NumOfParallelsSmoke" style="border: none; text-align: center;font-weight: bold;" size="8" value="1" required></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"><input type="text" id="z_NumOfParallelsReg" name="z_NumOfParallelsReg" style="border: none; text-align: center;font-weight: bold;" size="8" value="3" required></td>
+                <td style="font-size: small">Test Execution Time</td>
+                <td style="font-size: small"><input type="text" id="z_TestExecTimeSmoke" name="z_TestExecTimeSmoke" style="text-align: center; border: none" size="8" value="3 min" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_TestExecTimeReg" name="z_TestExecTimeReg" style="text-align: center; border: none" size="8" value="3 min" required=""></td>
+            </tr>
+            <tr style="background-color: #ebf5fb">
+                <td style="font-size: small">Time to Complete</td>
+                <td style="font-size: small"><input type="text" id="z_TimeToCompleteSmoke" name="z_TimeToCompleteSmoke" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="1 hour" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_TimeToCompleteReg" name="z_TimeToCompleteReg" style="text-align: center; background-color: #ebf5fb; border: none" size="8" value="7 hours" required=""></td>
             </tr>
             <tr>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
-                <td style="font-size: small;"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
             </tr>
             <tr>
-                <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; text-decoration:overline;">Total Number of Concurrencies</td>
+                <td style="font-variant: small-caps; font-family: system-ui, sans-serif; font-weight: 700">Number of Concurrencies</td>
+                <td style="font-size: small"><input type="text" id="z_NumOfParallelsSmoke" name="z_NumOfParallelsSmoke" style="text-align: center; border: none; font-weight: bold" size="8" value="1" required=""></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"><input type="text" id="z_NumOfParallelsReg" name="z_NumOfParallelsReg" style="text-align: center; border: none; font-weight: bold" size="8" value="3" required=""></td>
+            </tr>
+            <tr>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+                <td style="font-size: small"></td>
+            </tr>
+            <tr>
+                <td style="font-variant: small-caps; font-family: system-ui, sans-serif; font-weight: 700; text-decoration: overline">Total Number of Concurrencies</td>
                 <td></td>
-                <td style="font-size: small;"><input class="circle" type="text" id="z_TotalNumOfParallels" name="z_TotalNumOfParallels" style="border: none; text-align: center; background-color: #ebf5fb;font-weight: bold;" size="8" value="4" required></td>
+                <td style="font-size: small"><input class="circle" type="text" id="z_TotalNumOfParallels" name="z_TotalNumOfParallels" style="text-align: center; background-color: #ebf5fb; border: none; font-weight: bold" size="8" value="4" required=""></td>
                 <td></td>
             </tr>
             </table>
@@ -242,23 +243,23 @@
             <table>
                 <tr>
                     <td><label for="numOfAutomationEngineers">Number of Automation Engineers/SDETs</label></td>
-                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="numOfAutomationEngineers" name="numOfAutomationEngineers" value="3" required></td>
+                    <td><input style="color: #0066a2; border: 1px solid #a7c7e7; border-radius: 5px; padding: 4px" type="text" id="numOfAutomationEngineers" name="numOfAutomationEngineers" value="3" required=""></td>
                 </tr>
                 <tr>
                     <td><label for="timeForE2ETest">Time to automate an E2E test case (hr)</label></td>
-                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="timeForE2ETest" name="timeForE2ETest" value="6" required></td>
+                    <td><input style="color: #0066a2; border: 1px solid #a7c7e7; border-radius: 5px; padding: 4px" type="text" id="timeForE2ETest" name="timeForE2ETest" value="6" required=""></td>
                 </tr>
                 <tr>
                     <td><label for="timeToMaintain">Time for fixing broken test cases (% per year)</label></td>
-                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="timeToMaintain" name="timeToMaintain" value="30" required></td>
+                    <td><input style="color: #0066a2; border: 1px solid #a7c7e7; border-radius: 5px; padding: 4px" type="text" id="timeToMaintain" name="timeToMaintain" value="30" required=""></td>
                 </tr>
                 <tr>
                     <td><label for="z_AnnualSalaryDEV">Annual Salary for Automation Eng/SDET in USD (incl. bonuses and benefits)</label></td>
-                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_AnnualSalaryDEV" name="z_AnnualSalaryDEV" value="60000" required></td>
+                    <td><input style="color: #0066a2; border: 1px solid #a7c7e7; border-radius: 5px; padding: 4px" type="text" id="z_AnnualSalaryDEV" name="z_AnnualSalaryDEV" value="60000" required=""></td>
                 </tr>
                 <tr>
                     <td><label for="z_TestimLicense">Testim License</label></td>
-                    <td><input style="border-radius: 5px 5px 5px 5px; border: solid 1px; border-color: #A7C7E7; padding: 4px; color: #0066A2;" type="text" id="z_TestimLicense" name="z_TestimLicense" value="20000" required></td>
+                    <td><input style="color: #0066a2; border: 1px solid #a7c7e7; border-radius: 5px; padding: 4px" type="text" id="z_TestimLicense" name="z_TestimLicense" value="20000" required=""></td>
                 </tr>
 
                 <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
@@ -267,13 +268,13 @@
             </div>
             
         <div>
-    </form>
+    </div></div></form>
 
 
     <br><br>
-    <hr style="height:2px;border-width:0;color:#A7C7E7;background-color:#A7C7E7;">
-    <h2 style="font-family: system-ui, sans-serif; text-align: center;color: #0066A2;">ROI in <input type="text" id="ROIinMonths" style="border: none; text-align: center;font-size:x-large;color: #28b463;font-weight: bold;" size="4" readonly> Months</h2>
-    <hr style="height:2px;border-width:0;color:#A7C7E7;background-color:#A7C7E7;">
+    <hr style="color: #a7c7e7; background-color: #a7c7e7; border-width: 0; height: 2px">
+    <h2 style="text-align: center; color: #0066a2; font-family: system-ui, sans-serif">ROI in <input type="text" id="ROIinMonths" style="text-align: center; color: #28b463; border: none; font-size: x-large; font-weight: bold" size="4" readonly=""> Months</h2>
+    <hr style="color: #a7c7e7; background-color: #a7c7e7; border-width: 0; height: 2px">
     <br><br>
 
 
@@ -281,114 +282,114 @@
         <div class="div1">
     <table>
         <tr>
-            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Cost Item</th>
-            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Coded Solution</th>
-            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Testim Automation</th>
-            <th style="font-family: system-ui, sans-serif; font-size: small; font-variant: small-caps; background-color: #E2DFD2;">Savings / year</th>
+            <th style="font-variant: small-caps; background-color: #e2dfd2; font-family: system-ui, sans-serif; font-size: small">Cost Item</th>
+            <th style="font-variant: small-caps; background-color: #e2dfd2; font-family: system-ui, sans-serif; font-size: small">Coded Solution</th>
+            <th style="font-variant: small-caps; background-color: #e2dfd2; font-family: system-ui, sans-serif; font-size: small">Testim Automation</th>
+            <th style="font-variant: small-caps; background-color: #e2dfd2; font-family: system-ui, sans-serif; font-size: small">Savings / year</th>
         </tr>
         <tr>
-            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; background-color: #FAF9F6;">Authoring</td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
+            <td style="font-variant: small-caps; background-color: #faf9f6; font-family: system-ui, sans-serif; font-weight: 700">Authoring</td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Time to automate an E2E test case (hr)</td>
-            <td style="font-size: small;"><input type="text" id="t_timeForE2ETest" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" style="border: none; text-align: center; color: #0066A2;" size="8" value="1" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Time to automate an E2E test case (hr)</td>
+            <td style="font-size: small"><input type="text" id="t_timeForE2ETest" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" style="text-align: center; color: #0066a2; border: none" size="8" value="1" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Total number of E2E automated test cases</td>
-            <td style="font-size: small;"><input type="text" id="totalNumOfAutomatedTests" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="totalNumOfAutomatedTests2" style="border: none; text-align: center; color: #0066A2;" size="8" value="1" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Total number of E2E automated test cases</td>
+            <td style="font-size: small"><input type="text" id="totalNumOfAutomatedTests" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="totalNumOfAutomatedTests2" style="text-align: center; color: #0066a2; border: none" size="8" value="1" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Hourly salary ($<input type="text" id="zz_AnnualSalaryDEV" style="border: none; text-align: center;" size="6" readonly>annual)</td>
-            <td style="font-size: small;"><input type="text" id="z_HourlySalaryDEV" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="z_HourlySalaryDEV2" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Hourly salary ($<input type="text" id="zz_AnnualSalaryDEV" style="text-align: center; border: none" size="6" readonly="">annual)</td>
+            <td style="font-size: small"><input type="text" id="z_HourlySalaryDEV" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="z_HourlySalaryDEV2" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr">
-            <td style="font-size: small;">Annual cost ($)</td>
-            <td style="font-size: small;"><input type="text" id="totalAnnualCostManual" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="totalAnnualCostTestim" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="savingsPerYearAutomation" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
-        </tr>
+            <td style="font-size: small">Annual cost ($)</td>
+            <td style="font-size: small"><input type="text" id="totalAnnualCostManual" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="totalAnnualCostTestim" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="savingsPerYearAutomation" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
+        
 
         <tr>
-            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; background-color: #FAF9F6;">Maintenance</td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
+            <td style="font-variant: small-caps; background-color: #faf9f6; font-family: system-ui, sans-serif; font-weight: 700">Maintenance</td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Yearly maintenance (%)</td>
-            <td style="font-size: small;"><input type="text" id="t_MaintenanceManual" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="t_MaintenanceTestim" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Yearly maintenance (%)</td>
+            <td style="font-size: small"><input type="text" id="t_MaintenanceManual" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="t_MaintenanceTestim" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
                 <tr>
-            <td style="font-size: small;">Annual salary ($)</td>
-            <td style="font-size: small;"><input type="text" id="t_annualSalary" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="t_annualSalary2" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Annual salary ($)</td>
+            <td style="font-size: small"><input type="text" id="t_annualSalary" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="t_annualSalary2" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Number of automation Eng/Dev</td>
-            <td style="font-size: small;"><input type="text" id="t_numberOfAutomationEng" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="t_numberOfAutomationEng2" style="border: none; text-align: center; color: #0066A2;" size="8" readonly></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small">Number of automation Eng/Dev</td>
+            <td style="font-size: small"><input type="text" id="t_numberOfAutomationEng" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="t_numberOfAutomationEng2" style="text-align: center; color: #0066a2; border: none" size="8" readonly=""></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;">Annual maintenance ($)</td>
-            <td style="font-size: small;"><input type="text" id="annualMaintenanceAutomation" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="annualMaintenanceTestim" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
-            <td style="font-size: small;"><input type="text" id="savingsPerYearMaint" style="border: none; text-align: center; color: #0066A2; font-weight: bold;" size="8" readonly></td>
+            <td style="font-size: small">Annual maintenance ($)</td>
+            <td style="font-size: small"><input type="text" id="annualMaintenanceAutomation" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="annualMaintenanceTestim" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
+            <td style="font-size: small"><input type="text" id="savingsPerYearMaint" style="text-align: center; color: #0066a2; border: none; font-weight: bold" size="8" readonly=""></td>
         </tr>
         <tr>
-            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; background-color: #FAF9F6;">Testim License</td>
-            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" style="border: none; text-align: center;background-color: #FAF9F6;" size="8" readonly></td>
-            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" id="zz_TestimLicense" style="border: none; text-align: center; color: #0066A2;font-weight: bold;background-color: #FAF9F6;" size="8" readonly></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
+            <td style="font-variant: small-caps; background-color: #faf9f6; font-family: system-ui, sans-serif; font-weight: 700">Testim License</td>
+            <td style="background-color: #faf9f6; font-size: small"><input type="text" style="text-align: center; background-color: #faf9f6; border: none" size="8" readonly=""></td>
+            <td style="background-color: #faf9f6; font-size: small"><input type="text" id="zz_TestimLicense" style="text-align: center; color: #0066a2; background-color: #faf9f6; border: none; font-weight: bold" size="8" readonly=""></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; background-color: #FAF9F6;">Total Annual Cost (USD)</td>
-            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" id="z_TotalAnnualCodedCost" style="border: none; text-align: center;background-color: #FAF9F6;font-weight: bold;color: #0066A2;" size="10" readonly></td>
-            <td style="font-size: small;background-color: #FAF9F6;"><input type="text" id="z_TotalAnnualTestimCost" style="border: none; text-align: center;background-color: #FAF9F6;font-weight: bold;color: #0066A2;" size="10" readonly></td>
-            <td style="font-size: small;background-color: #FAF9F6;"></td>
+            <td style="font-variant: small-caps; background-color: #faf9f6; font-family: system-ui, sans-serif; font-weight: 700">Total Annual Cost (USD)</td>
+            <td style="background-color: #faf9f6; font-size: small"><input type="text" id="z_TotalAnnualCodedCost" style="text-align: center; color: #0066a2; background-color: #faf9f6; border: none; font-weight: bold" size="10" readonly=""></td>
+            <td style="background-color: #faf9f6; font-size: small"><input type="text" id="z_TotalAnnualTestimCost" style="text-align: center; color: #0066a2; background-color: #faf9f6; border: none; font-weight: bold" size="10" readonly=""></td>
+            <td style="background-color: #faf9f6; font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
-            <td style="font-size: small;"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
+            <td style="font-size: small"></td>
         </tr>
         <tr>
-            <td style="font-family: system-ui, sans-serif; font-weight: 700; font-variant: small-caps; text-decoration:overline;">Total Savings Per Year</td>
+            <td style="font-variant: small-caps; font-family: system-ui, sans-serif; font-weight: 700; text-decoration: overline">Total Savings Per Year</td>
             <td></td>
             <td></td>
-            <td style="font-size: small;"><input class="circle" type="text" id="totalSavingsPerYear" style="border: none; text-align: center; color: #0066A2; background-color: #2AAA8A80;" size="8" readonly></td>
+            <td style="font-size: small"><input class="circle" type="text" id="totalSavingsPerYear" style="text-align: center; color: #0066a2; background-color: #2aaa8a80; border: none" size="8" readonly=""></td>
         </tr>
-    </table>
+    </tr"></table>
     </div>
 
 
     <div class="div2">
-    <div style="width: 750px;"><canvas id="kpis_automation"></canvas></div>
+    <div style="width: 750px"><canvas id="kpis_automation"></canvas></div>
 </div>
 </div>
 
     <!--<button class="btnRefresh" id="btnRefresh">Manual3</button>-->
 
-    <script type="module" src="./kpis_automation.js"></script>
+    <script src="/fromAutomation.93b78bb5.js" defer=""></script>
 
   </body>
 </html>
